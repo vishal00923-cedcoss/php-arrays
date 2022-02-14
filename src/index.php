@@ -189,5 +189,44 @@ $products = array(
        }
        ?>
     </table>
+
+    <br>
+
+    <?php
+    foreach ($products as $key1 => $value1) {
+        foreach ($value1 as $key2 => $value2) {
+            foreach ($value2 as $key3 => $value3) {
+                if ($value3['id'] == "PR002") {
+                   $products[$key1][$key2][$key3]['name'] = "BIG-555";
+                }
+              }
+          }
+       }
+    ?>
+
+<table>
+        <tr>
+            <th>Category</th>
+            <th>Subcategory</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+        </tr>
+       <?php
+       foreach ($products as $key1 => $value1) {
+          foreach ($value1 as $key2 => $value2) {
+              foreach ($value2 as $val) {
+                  echo "<tr>";
+                      echo "<td>$key1</td>";
+                      echo "<td>$key2</td>";
+                      echo "<td>".$val['id']."</td>";
+                      echo "<td>".$val['name']."</td>";
+                      echo "<td>".$val['brand']."</td>";
+                  echo "</tr>"; 
+              }
+          }
+       }
+       ?>
+    </table>
 </body>
 </html>
