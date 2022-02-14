@@ -1,7 +1,11 @@
-tr {
-	text-align: center;
+table,
+tr,
+td {
+	border: 1px solid #000;
+	border-collapse: collapse;
 }
 
 td {
+	text-align: center;
 	padding: 4px;
 }

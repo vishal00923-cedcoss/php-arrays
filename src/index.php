@@ -104,7 +104,7 @@ $products = array(
     </table>
 
     <br>
-    
+
     <table>
         <tr>
             <th>Category</th>
@@ -133,5 +133,24 @@ $products = array(
        }
        ?>
     </table>
+
+    <br>
+
+    <?php
+    foreach ($products as $key1 => $value1) {
+        foreach ($value1 as $key2 => $value2) {
+              foreach ($value2 as $val) {
+                  if ($val['brand'] == "Samsung") {
+                    echo "Product ID: ".$val['id']."<br>";
+                    echo "Product Name: ".$val['name']."<br>";
+                    echo "Subcategory: ".$key2."<br>";
+                    echo "Category: ".$key1."<br>";
+              }
+            }
+        }
+     }
+
+     echo "<br>";
+    ?>
 </body>
 </html>
